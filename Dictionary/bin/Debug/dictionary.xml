@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<WordDictionary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Word>
+    <Polish>jeść</Polish>
+    <English>eat</English>
+  </Word>
+  <Word>
+    <Polish>iść</Polish>
+    <English>go</English>
+  </Word>
+  <Word>
+    <Polish>jedzenie</Polish>
+    <English>food</English>
+  </Word>
+  <Word>
+    <Polish>okno</Polish>
+    <English>window</English>
+  </Word>
+  <Word>
+    <Polish>kot</Polish>
+    <English>cat</English>
+  </Word>
+</WordDictionary>

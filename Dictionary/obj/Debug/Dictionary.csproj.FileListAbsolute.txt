@@ -1,0 +1,8 @@
+C:\Projekty\Dictionary\Dictionary\bin\Debug\Dictionary.exe.config
+C:\Projekty\Dictionary\Dictionary\obj\Debug\Dictionary.csprojResolveAssemblyReference.cache
+C:\Projekty\Dictionary\Dictionary\bin\Debug\Dictionary.exe
+C:\Projekty\Dictionary\Dictionary\bin\Debug\Dictionary.pdb
+C:\Projekty\Dictionary\Dictionary\bin\Debug\Autofac.dll
+C:\Projekty\Dictionary\Dictionary\bin\Debug\Autofac.xml
+C:\Projekty\Dictionary\Dictionary\obj\Debug\Dictionary.exe
+C:\Projekty\Dictionary\Dictionary\obj\Debug\Dictionary.pdb
