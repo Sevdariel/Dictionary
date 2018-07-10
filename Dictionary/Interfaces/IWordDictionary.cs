@@ -11,7 +11,8 @@ namespace Dictionary
     public interface IWordDictionary
     {
         void CreateWordDictionary(FileStream data, XmlSerializer serializer);
-        void NewWordInDictionary(string pl, string en);
+        void NewWordInDictionary(Word word);
+        bool CheckWord(Word word);
         List<Word> GetWordDictionary();
     }
 }

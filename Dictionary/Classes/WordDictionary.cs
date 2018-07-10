@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,12 +19,25 @@ namespace Dictionary
  	        wordList = (List<Word>)serializer.Deserialize(data);
         }
 
-        public void NewWordInDictionary(string pl, string en)
+        public void NewWordInDictionary(Word word)
         {
-            Word word = new Word();
-            word.Polish = pl;
-            word.English = en;
             wordList.Add(word);
+        }
+
+        public bool CheckWord(Word word)
+        {
+            if (!wordList.Contains(word))
+            {
+                NewWordInDictionary(word);
+                return true;
+            }
+            Console.WriteLine(word.Polish + " - " + word.English);
+            return false;
+        }
+
+        public void FindWordInDictionary()
+        {
+
         }
 
         public List<Word> GetWordDictionary()

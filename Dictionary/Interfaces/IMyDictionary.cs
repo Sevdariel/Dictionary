@@ -11,5 +11,6 @@ namespace Dictionary
         void Show();
         void Add();
         void Edit();
+        void Find();
     }
 }
