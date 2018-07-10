@@ -12,6 +12,8 @@ namespace Dictionary
     {
         void CreateWordDictionary(FileStream data, XmlSerializer serializer);
         void NewWordInDictionary(Word word);
+        void RemoveFromDictionary(Word word);
+        void EditInDictionary(Word word);
         bool CheckWord(Word word);
         List<Word> GetWordDictionary();
     }

@@ -52,27 +52,29 @@ namespace Dictionary
 
         public void Edit()
         {
+            Word word = Find();
+            _wordDictionary.EditInDictionary(word);
+            _dataPrepare.Save();
         }
 
-        public void Find()
+        public Word Find()
         {
             Console.WriteLine("Chcesz znalezc angielskie (e) tlumaczenie czy polskie (p)\n");
             string key = Console.ReadLine().ToLower();
             switch (key)
             {
                 case "e":
-                    FindEn();
-                    break;
+                    return FindEn();
                 case "p":
-                    FindPl();
-                    break;
+                    return FindPl();
             }
+
+            return null;
         }
 
-        private void FindPl()
+        private Word FindPl()
         {
             Word word = new Word();
-            bool flag = false;
             Console.WriteLine("Podaj angielski wyraz");
             word.English = Console.ReadLine().ToString().ToLower();
             foreach (var englishWord in _wordDictionary.GetWordDictionary())
@@ -80,18 +82,16 @@ namespace Dictionary
                 if (englishWord.English == word.English)
                 {
                     Console.WriteLine(englishWord.Polish + " - " + englishWord.English);
-                    flag = true;
-                    break;
+                    return englishWord;
                 }
             }
-            if (!flag)
-                Console.WriteLine("Nie ma takiego slowa");
+            Console.WriteLine("Nie ma takiego slowa");
+            return null;
         }
 
-        private void FindEn()
+        private Word FindEn()
         {
             Word word = new Word();
-            bool flag = false;
             Console.WriteLine("Podaj polski wyraz");
             word.Polish = Console.ReadLine().ToString().ToLower();
             foreach (var polishWord in _wordDictionary.GetWordDictionary())
@@ -99,12 +99,11 @@ namespace Dictionary
                 if (polishWord.Polish == word.Polish)
                 {
                     Console.WriteLine(polishWord.English + " - " + polishWord.Polish);
-                    flag = true;
-                    break;
+                    return polishWord;
                 }
             }
-            if (!flag)
-                Console.WriteLine("Nie ma takiego słowa");
+            Console.WriteLine("Nie ma takiego słowa");
+            return null;
         }
 
         private void EnToPl()

@@ -35,14 +35,24 @@ namespace Dictionary
             return false;
         }
 
-        public void FindWordInDictionary()
+        public void EditInDictionary(Word word)
         {
-
+            int id = wordList.IndexOf(word);
+            Console.WriteLine("Edytuj polskie znaczenie");
+            wordList[id].Polish = Console.ReadLine().ToLower();
+            Console.WriteLine("Edytuj angielskie znaczenie");
+            wordList[id].English = Console.ReadLine().ToLower();
         }
 
         public List<Word> GetWordDictionary()
         {
             return wordList;
+        }
+
+
+        public void RemoveFromDictionary(Word word)
+        {
+            wordList.Remove(word);
         }
     }
 }
