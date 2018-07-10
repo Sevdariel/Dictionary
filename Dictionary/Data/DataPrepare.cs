@@ -38,6 +38,5 @@ namespace Dictionary
         {
             serializer = new XmlSerializer(typeof(List<Word>), new XmlRootAttribute("WordDictionary"));
         }
-
     }
 }

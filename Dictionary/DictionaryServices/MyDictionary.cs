@@ -68,7 +68,6 @@ namespace Dictionary
                 case "p":
                     return FindPl();
             }
-
             return null;
         }
 
@@ -76,7 +75,7 @@ namespace Dictionary
         {
             Word word = new Word();
             Console.WriteLine("Podaj angielski wyraz");
-            word.English = Console.ReadLine().ToString().ToLower();
+            word.English = Console.ReadLine().ToLower();
             foreach (var englishWord in _wordDictionary.GetWordDictionary())
             {
                 if (englishWord.English == word.English)
@@ -93,7 +92,7 @@ namespace Dictionary
         {
             Word word = new Word();
             Console.WriteLine("Podaj polski wyraz");
-            word.Polish = Console.ReadLine().ToString().ToLower();
+            word.Polish = Console.ReadLine().ToLower();
             foreach (var polishWord in _wordDictionary.GetWordDictionary())
             {
                 if (polishWord.Polish == word.Polish)
@@ -110,9 +109,9 @@ namespace Dictionary
         {
             Word word = new Word();
             Console.WriteLine("Podaj angielski wyraz");
-            word.English = Console.ReadLine().ToString().ToLower();
+            word.English = Console.ReadLine().ToLower();
             Console.WriteLine("Podaj polskie tlumaczenie");
-            word.Polish = Console.ReadLine().ToString().ToLower();
+            word.Polish = Console.ReadLine().ToLower();
             if (_wordDictionary.CheckWord(word))
                 Console.WriteLine("Taki wyraz juz istnieje");
         }
