@@ -17,32 +17,38 @@ namespace Dictionary
             builder.RegisterModule<MyDictionaryModule>();
             var container = builder.Build();
 
-            var dict = container.Resolve<MyDictionary>();
-            var prepare = container.Resolve<DataPrepare>();
-            bool loop = true;
-            prepare.Load();
-            while (loop)
+            using (var scope = container.BeginLifetimeScope())
             {
-                Console.WriteLine("Co chcesz zrobic");
-                Console.WriteLine("\tWyswietlic slownik (s),\n\tdodac nowe znaczenie (d),\n\tedytowac juz istniejace (e),\n\tznalezc juz istniejace (z),\n\twyjsc (w)\n");
-                string key = Console.ReadLine().ToLower();
-                switch (key)
+                var dict = scope.Resolve<IMyDictionary>();
+                var prepare = scope.Resolve<IDataPrepare>();
+            
+
+            bool loop = true;
+                prepare.Load();
+                while (loop)
                 {
-                    case "s":
-                        dict.Show();
-                        break;
-                    case "d":
-                        dict.Add();
-                        break;
-                    case "e":
-                        dict.Edit();
-                        break;
-                    case "z":
-                        dict.Find();
-                        break;
-                    case "w":
-                        loop = false;
-                        break;
+                    Console.WriteLine("Co chcesz zrobic");
+                    Console.WriteLine(
+                        "\tWyswietlic slownik (s),\n\tdodac nowe znaczenie (d),\n\tedytowac juz istniejace (e),\n\tznalezc juz istniejace (z),\n\twyjsc (w)\n");
+                    string key = Console.ReadLine().ToLower();
+                    switch (key)
+                    {
+                        case "s":
+                            dict.Show();
+                            break;
+                        case "d":
+                            dict.Add();
+                            break;
+                        case "e":
+                            dict.Edit();
+                            break;
+                        case "z":
+                            dict.Find();
+                            break;
+                        case "w":
+                            loop = false;
+                            break;
+                    }
                 }
             }
         }

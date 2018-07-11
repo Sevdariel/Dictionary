@@ -12,13 +12,13 @@ namespace Dictionary.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //var assembly = typeof(MyDictionaryModule)
-            //    .GetTypeInfo()
-            //    .Assembly;
+            var assembly = typeof(MyDictionaryModule)
+                .GetTypeInfo()
+                .Assembly;
 
-            //builder.RegisterAssemblyTypes(assembly)
-            //    .AsSelf()
-            //    .AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(assembly)
+                .AsSelf()
+                .AsImplementedInterfaces();
 
             builder.RegisterType<DataPrepare>().As<IDataPrepare>();
             builder.RegisterType<MyDictionary>().As<IMyDictionary>();

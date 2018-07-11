@@ -44,16 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DataPrepare.cs" />
-    <Compile Include="Interfaces\IDataPrepare.cs" />
-    <Compile Include="Interfaces\IMyDictionary.cs" />
-    <Compile Include="Interfaces\IWordDictionary.cs" />
+    <Compile Include="Data\DataPrepare.cs" />
+    <Compile Include="Data\IDataPrepare.cs" />
+    <Compile Include="DictionaryServices\IMyDictionary.cs" />
+    <Compile Include="Dictionary\IWordDictionary.cs" />
     <Compile Include="Modules\MyDictionaryModule.cs" />
-    <Compile Include="Classes\MyDictionary.cs" />
+    <Compile Include="DictionaryServices\MyDictionary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Word.cs" />
-    <Compile Include="Classes\WordDictionary.cs" />
+    <Compile Include="Dictionary\Word.cs" />
+    <Compile Include="Dictionary\WordDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
