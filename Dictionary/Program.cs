@@ -11,6 +11,7 @@ namespace Dictionary
 {
     class Program
     {
+        //Todo: Przerobić na .netcore 3.1
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
