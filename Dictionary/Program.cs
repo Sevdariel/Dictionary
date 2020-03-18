@@ -11,6 +11,7 @@ namespace Dictionary
 {
     class Program
     {
+        //Stary projekt wykorzystany do kursu gita od Macieja Aniserowicza
         //Todo: Przerobić na .netcore 3.1
         static void Main(string[] args)
         {
